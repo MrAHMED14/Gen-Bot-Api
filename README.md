@@ -22,4 +22,4 @@ Adding the bot to your Discord server is a straightforward process:
 
    ```bash
    node index.js
-   `
+    ```
