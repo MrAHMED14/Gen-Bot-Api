@@ -22,13 +22,4 @@ Adding the bot to your Discord server is a straightforward process:
 
    ```bash
    node index.js
-   ```
-
-8. **Access the Dashboard:** Access the bot's dashboard by navigating to your server's URL or `127.0.0.1:3000`.
-
-For comprehensive instructions on configuring and utilizing GiftMaster, please refer to our informative [YouTube video tutorial](example.com).
-
-## Preview
-
-- **Help Menu:**
-  [![Help Menu](https://cdn.discordapp.com/attachments/1134114615962390581/1155450003062526003/image.png)]
+   `
