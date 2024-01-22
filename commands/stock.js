@@ -14,9 +14,10 @@ module.exports = {
     const roitStock = await getStock(`${__dirname}/../riot/`);
 
     const embed = new MessageEmbed()
+      //Stock layout
       .setColor(config.color.default)
-      .setTitle(`Service Stock`)
-      .setDescription(`👋 Hello **${interaction.user}**`)
+      .setTitle("**ksgenrator Service Stock**") 
+      .setDescription(`Hello **${interaction.user}** 👋`) 
       .setImage(config.banner)
       .setFooter(`${config.footer}`);
 

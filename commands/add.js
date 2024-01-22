@@ -18,6 +18,7 @@ module.exports = {
 				.addChoices(
 					{ name: 'Free', value: 'free' },
 					{ name: 'Premium', value: 'premium' },
+					{ name: 'Riot', value: 'riot' },
 				))
 		.addStringOption(option =>
 			option.setName('service')
@@ -43,7 +44,7 @@ module.exports = {
 			return interaction.reply({ embeds: [errorEmbed], ephemeral: true });
 		}
 
-		if (!service || !account || (type !== 'free' && type !== 'premium')) {
+		if (!service || !account || (type !== 'free' && type !== 'premium' && type !== 'riot')) {
 			const missingParamsEmbed = new MessageEmbed()
 				.setColor(config.color.red)
 				.setTitle('Missing parameters or invalid type!')
@@ -58,7 +59,9 @@ module.exports = {
 			filePath = `${__dirname}/../free/${service}.txt`;
 		} else if (type === 'premium') {
 			filePath = `${__dirname}/../premium/${service}.txt`;
-		}
+		}else{
+      filePath = `${__dirname}/../riot/${service}.txt`;
+    }
 
 		fs.appendFile(filePath, `${os.EOL}${account}`, function (error) {
 			if (error) {

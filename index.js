@@ -1,7 +1,7 @@
 const { Client, Intents, Collection } = require("discord.js");
 const config = require('./config.json');
 const fs = require("fs");
-const commands = require('./deploy-commands.js')
+require('./deploy-commands.js')
 require('dotenv').config()
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });

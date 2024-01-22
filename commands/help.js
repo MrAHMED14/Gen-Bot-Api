@@ -1,7 +1,6 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { MessageEmbed } = require("discord.js");
 const config = require("../config.json");
-const stock = require("./stock");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -9,18 +8,12 @@ module.exports = {
     .setDescription("Display the command list."),
 
   async execute(interaction) {
-    const { commands } = interaction.client;
-
     const commandListEmbed = new MessageEmbed()
       .setColor(config.color.default)
-      .setTitle("Help Panel")
-      .setDescription(
-        `👋 Hello and welcome to **${interaction.guild.name} Server**!`
-      )
+      .setTitle("**Help Panel Overview:**")
+      .setDescription(`Hello **${interaction.user}**`)
       .setImage(config.banner)
-      .setThumbnail(
-        interaction.client.user.displayAvatarURL({ dynamic: true, size: 64 })
-      ) // Set the bot's avatar as the thumbnail
+      .setThumbnail(config.avatar)
       .addFields({
         name: `Commands`,
         value:
@@ -28,7 +21,7 @@ module.exports = {
       })
       .setFooter(
         interaction.user.tag,
-        interaction.user.displayAvatarURL({ dynamic: true, size: 64 })
+        interaction.user.displayAvatarURL({ dynamic: true, size: 64 }),
       )
       .setTimestamp();
 
